@@ -112,23 +112,20 @@ int countEs(string word) {
 
 string factors56(int num) {
 
-	//if ((num % 10) == 5 || (num % 10) == 0){
-	//	if ((num % 2) == 0 && (num % 3) == 0) {
-	//		return num + " is divisible by both 5 and 6";
-	//	}
-	//}
+	if (((num % 10) == 5 || (num % 10) == 0) && 
+		 ((num % 2) == 0 && (num % 3) == 0)){
+			return to_string(num) + " is divisible by both 5 and 6";
 
+	}
 
-	//else if ((num / 5) == 0 || (num / 6) == 0) {
-	//	 return  num + " is divisible by 5 or 6, but not both";
-	//}/*
-	//else if (num / 6 == 0 && num / 5 == 0) {
-	//	return num + " is divisible by both 5 and 6";
-	//}*/
-	//else {
-	//	return num + " is not divisible by either 5 or 6";
-	//}
-	return num + " is not divisible by either 5 or 6";
+	else if (((num % 5) != 0 && (num % 6) == 0)  ||
+			((num % 5) == 0 && (num % 6) != 0))	{
+		 return  to_string(num) + " is divisible by 5 or 6, but not both";
+	}
+	
+	else {
+		return  to_string(num) + " is not divisible by either 5 or 6";
+	}
 }
 
 void cumulative(vector<int> &list) {
